@@ -225,3 +225,64 @@ console.log(fileName2);
 
 
 // Оператор нулевого слияния
+let age2 = 0;
+console.log(age2 || 18);
+console.log(age2 ?? 18);
+
+// Упражнение - проверка прав
+const balanceSteam = 1200;
+const bonusBalance = 90;
+const isBanned = false;
+const isExist = false;
+const isSelling = true;
+
+const canBuy = (balanceSteam > 1000 || bonusBalance > 100)
+  && !isBanned
+  && !isExist
+  && isSelling;
+console.log(`Могу купить игру: ${canBuy ? 'Да' : 'Нет'}`);
+
+
+// Функции
+function logName(name, surname) {
+  console.log(`Моё имя ${name} ${surname}`);
+}
+
+logName('Denis', 'Razumniy');
+
+function contDepositSum(depositInUSD, month, rate) {
+  return depositInUSD * (1 + rate / 12) ** month;
+}
+const exemple1 = contDepositSum(1000, 24, 0.12);
+console.log(exemple1);
+
+const exemple2 = contDepositSum(1000, 44, 0.10);
+console.log(exemple2);
+
+// Анонимные функции
+function powerOfTwo(num) {
+  return num * num;
+}
+console.log(powerOfTwo(5));
+
+const pof = function (num) {
+  return num * num;
+}
+console.log(pof(10));
+
+
+// Стрелочные функции
+const poft = num => num * num;
+console.log(poft(6));
+
+// Упражнение - Упращение функции
+function toPower(num, power) {
+  const res3 = num ** power;
+  return res3;
+}
+console.log(toPower(2,3));
+
+const toPowerArrow = (num, power) => num ** power;
+console.log(toPowerArrow(2, 3));
+
+// Параметры по умолчанию
