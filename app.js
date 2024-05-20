@@ -80,3 +80,148 @@ console.log(Boolean(4));
 console.log(Boolean(undefined));
 console.log(Boolean(null));
 console.log(Boolean(NaN));
+
+// if and else
+
+const money = 10;
+
+if (money > 50) {
+  console.log('Можно купить наш продукт');
+} else if (money > 5) {
+  console.log('Можно купить мини продукт');
+} else {
+  console.log('Не хватает баланса');
+}
+
+console.log('Итог');
+
+//  Задача
+const deposit = 12000;
+const rate = 0.07;
+const depositLength = 24;
+const houseCost = 13500;
+
+const res = deposit * (1 + rate / 12) ** 24;
+console.log(res);
+if (res > houseCost) {
+  console.log(`Можем купить. Остаток ${res - houseCost}`);
+} else {
+  console.log(`Не хватает денег для покупки ${res - houseCost}`);
+}
+
+
+
+// switch
+const role = 'manager';
+
+/*if (role === 'manager') {
+  console.log('Мененджер');
+} else if (role === 'admin') {
+  console.log('админ');
+} else if (role === 'seo') {
+  console.log('сео');
+} else {
+  console.log('Мы тебя незнаем');
+}*/
+
+switch (role) {
+  case 'manager': // role === 'manager'
+  console.log('Мененджер');
+  break;
+  case 'admin': // role === 'admin'
+  console.log('админ');
+  break;
+  case 'seo': // role === 'seo'
+  console.log('сео');
+  break;
+  default:
+    console.log('Мы тебя незнаем');
+}
+
+switch (role) {
+  case 'manager':
+  case 'admin':
+  console.log('Не руководитель');
+  break;
+  case 'seo':
+  console.log('Руководитель');
+  break;
+  default:
+    console.log('Мы тебя незнаем');
+}
+
+// Тернарные операторы
+/*
+const bmwX3Price = 100000;
+const fordFocusPrice = 10000;
+const budget = 20000;
+
+let message;
+if (budget > bmwX3Price) {
+  message = 'BMV';
+} else if (budget > fordFocusPrice) {
+  message = 'Ford';
+} else {
+  message = 'Велосипед';
+}
+
+console.log(`Я хочу купить ${message}`);
+*/
+
+
+const bmwX3Price = 100000;
+const budget = 20000;
+
+let message;
+if (budget > bmwX3Price) {
+message = 'BMV';
+} else {
+  message = 'Велосипед';
+}
+
+console.log(`Я хочу купить ${message}`);
+
+const str = budget > bmwX3Price ? 'Хочу купить BMW' : 'Хочу купить велосипед';
+console.log(str);
+
+// Упражнение
+/*
+const res2 = prompt('Сколько будет 7 + или -15?');
+switch (true) {
+  case res2 === 'Я не робот':
+  case Number(res2) === 22:
+  case Number(res2) === -8:
+    console.log('Успех');
+    break;
+  default:
+    console.log('Вы робот');
+}
+*/
+
+// Булевая логика
+// Логические операторы
+const isAdmin = true;
+const canWrite = true;
+
+console.log(`Системный файл ${isAdmin && canWrite}`);
+console.log(`Обычный файл ${isAdmin || canWrite}`);
+console.log(`Инвертируем права админа ${!isAdmin}`);
+
+const isEdited = true;
+const isSuperAdmin = true;
+
+console.log(`Системный файл с редактированием ${
+  isAdmin && canWrite && (!isEdited || isSuperAdmin)
+}`);
+
+// Операторы с другими типами
+let a = 'Marina';
+const userName = a || 'Петя';
+console.log(userName);
+
+const isAdmin2 = true;
+const fileName2 = isAdmin2 && 'file.mp4';
+console.log(fileName2);
+
+
+// Оператор нулевого слияния
